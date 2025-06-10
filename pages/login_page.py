@@ -2,7 +2,7 @@ import allure
 from pages.base_page import BasePage
 from urls import Urls
 from locators import LoginPageLocators
-from selenium.webdriver.support.ui import WebDriverWait
+
 
 class LoginPage(BasePage):
     def __init__(self, driver):
@@ -12,7 +12,6 @@ class LoginPage(BasePage):
 
     @allure.step("Клик по кнопке 'Восстановить пароль'")
     def click_on_forgot_password(self):
-        wait = WebDriverWait(self.driver, 10)
         self.click_on_element(self.locators.FORGOT_PASSWORD_BUTTON)
 
     @allure.step("Проверка видимости кнопки входа")
